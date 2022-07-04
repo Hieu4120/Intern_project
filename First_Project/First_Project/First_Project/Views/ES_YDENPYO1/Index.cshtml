@@ -1,0 +1,219 @@
+﻿@using graduate_project.Models
+@model ES_YDENPYO1ViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    int i = 1;
+    double sum = 0;
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<body>
+    <h1 class=text-center style="margin-bottom: 30px">予定伝票一覧</h1>
+    @*------------------------年度-----------------------------------*@
+    <form asp-controller="ES_YDENPYO1" asp-action="Index" method="get">
+        <div class="form-group row" style="margin-bottom: 30px;">
+            <label class="col-sm-1 col-form-label">年度</label>
+            <div class="col-sm-2">
+                <p>
+                    <select class=" rounded border-dark" style="width: 100%; height: calc(1.5em + .75rem + 2px);" asp-for="SearchSelect" asp-items="Model.KAIKEIND">
+                        <option value="2022">2022</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+        <div onload="loadfromto()">
+            <div class="form-group row ">
+                <label for="input_year" class="col-sm-1 col-form-label">伝票番号</label>
+                <div class="col-sm-2 hide-date" id="doc_id_f">
+                    <input type="text" id="doc_id_from" class="form-control  border-dark" name="Document_id_from" value=@ViewData["Document_id_from"]>
+                </div>
+                <label class="col-sm-1" style='padding-left: 40px;'>-</label>
+                <div class="col-sm-2 hide-date" id="doc_id_t">
+                    <input type="text" id="doc_id_to" class="form-control border-dark" name="Document_id_to" value=@ViewData["Document_id_to"]>
+                </div>
+                <span id="required_doc_id" class="text-danger col-sm-2" style="margin-top: 7px;"></span>
+            </div>
+
+            @*---------------------------------------伝票日付-------------------------------------*@
+            <div class="form-group row ">
+                <label for="input_year" class="col-sm-1 col-form-label">伝票日付</label>
+                @{
+                    if (ViewData["Document_date_from"] == null)
+                    {
+                        <div class="col-sm-2 hide-date" id="doc_date_f">
+                            <input type="date" id="doc_date_from" class="form-control border-dark" name="Document_date_from" value=@ViewData["Document_date_from"] onchange="remove_doc_date_f()">
+                        </div>
+                        <label class="col-sm-1" style='padding-left: 40px;'>-</label>
+                    }
+                    if (ViewData["Document_date_from"] != null)
+                    {
+                        <div class="col-sm-2" id="doc_date_f">
+                            <input type="date" id="doc_date_from" class="form-control border-dark" name="Document_date_from" value=@ViewData["Document_date_from"] onchange="remove_doc_date_f()">
+                        </div>
+                        <label class="col-sm-1" style='padding-left: 40px;'>-</label>
+                    }
+                    if (ViewData["Document_date_to"] == null)
+                    {
+                        <div class="col-sm-2 hide-date" id="doc_date_t">
+                            <input type="date" id="doc_date_to" class="form-control border-dark" name="Document_date_to" value=@ViewData["Document_date_to"] onchange="remove_doc_date_t()">
+                        </div>
+                    }
+                    if (ViewData["Document_date_to"] != null)
+                    {
+                        <div class="col-sm-2 " id="doc_date_t">
+                            <input type="date" id="doc_date_to" class="form-control border-dark" name="Document_date_to" value=@ViewData["Document_date_to"] onchange="remove_doc_date_t()">
+                        </div>
+                    }
+                }
+                <span id="required_doc_date" class="text-danger col-sm-2" style="margin-top: 7px;"></span>
+            </div>
+            @*---------------------------------------申請日--------------------------------------*@
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">申請日</label>
+                @{
+                    if (ViewData["application_date_from"] == null)
+                    {
+                        <div class="col-sm-2 hide-date" id="app_date_f">
+                            <input class="form-control border-dark" type="date" id="app_date_from" style="width:100%; height:100%;" name="application_date_from" value=@ViewData["application_date_from"] onchange="remove_app_date_f()">
+                        </div>
+                        <label class="col-sm-1" style='padding-left: 40px;'>-</label>
+                    }
+                    if (ViewData["application_date_from"] != null)
+                    {
+                        <div class="col-sm-2 " id="app_date_f">
+                            <input class="form-control border-dark" type="date" id="app_date_from" style="width:100%; height:100%;" name="application_date_from" value=@ViewData["application_date_from"] onchange="remove_app_date_f()">
+                        </div>
+                        <label class="col-sm-1" style='padding-left: 40px;'>-</label>
+                    }
+                    if (ViewData["application_date_to"] == null)
+                    {
+
+                        <div class="col-sm-2 hide-date" id="app_date_t">
+                            <input class="form-control border-dark" type="date" id="app_date_to" style="width:100%; height:100%" name="application_date_to" value=@ViewData["application_date_to"] onchange="remove_app_date_t()">
+                        </div>
+                    }
+                    if (ViewData["application_date_to"] != null)
+                    {
+                        <div class="col-sm-2 " id="app_date_t">
+                            <input class="form-control border-dark" type="date" id="app_date_to" style="width:100%; height:100%" name="application_date_to" value=@ViewData["application_date_to"] onchange="remove_app_date_t()">
+                        </div>
+                    }
+                }
+                <span id="required_app_date" class="text-danger col-sm-2" style="margin-top: 7px;"></span>
+            </div>
+            @*--------------------------------------出納方法---------------------------------------*@
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label">出納方法</label>
+            <div class="col-sm-2">
+                <p>
+                    <select class="rounded border-dark" style="width: 100%; height: calc(1.5em + .75rem + 2px);" asp-for="SearchSelect_cash_start" asp-items="Model.SUITOKB" value=@ViewData["cash_method_start"]>
+                        <option></option>
+                    </select>
+                </p>
+
+            </div>
+            <label class="col-sm-1" style='padding-left: 40px;'>-</label>
+            <div class="col-sm-2">
+                <p>
+                    <select class=" rounded border-dark" style="width: 100%; height: calc(1.5em + .75rem + 2px);" asp-for="SearchSelect_cash_end" asp-items="Model.SUITOKB" value=@ViewData["cash_method_end"]>
+                        <option></option>
+                    </select>
+                </p>
+            </div>
+            <a class="btn btn-secondary col-1" asp-action="Create" role="button" style="width:50%; height:30%;  margin-left:380px; border: 2px solid black;">登録</a>
+        </div>
+        <input id="btn_search_data" class="btn btn-secondary" type="submit" value="検索" style="margin-bottom:30px; width: 8%; height: 30%; border: 2px solid black;" />
+    </form>
+    @*----------------------------------Table------------------------------*@
+    <div class="table-responsive-sm text-center" style="max-height: 300px; overflow: auto;">
+        <table style=" border:2px solid black;" class="table table-bordered">
+            <thead class="sticky-lg-top">
+                <tr class="table-secondary">
+                    <th style="width:1%;">行</th>
+
+                    <th style="width:8.25%;">
+                        @Html.DisplayNameFor(model=> model.ES_YDENPYO[0].DENPYONO)
+                    </th>
+                    <th style="width:10.42%;">
+                        起票部門
+                    </th>
+                    <th style="width:10.42%;">
+                        @Html.DisplayNameFor(model=> model.ES_YDENPYO[0].DENPYODT)
+                    </th>
+                    <th style="width:10.42%;">
+                        申請日
+                    </th>
+                    <th style="width:10.42%;">
+                        @Html.DisplayNameFor(model=> model.ES_YDENPYO[0].SUITOKB)
+                    </th>
+                    <th style="width:30.5%;">
+                        @Html.DisplayNameFor(model=> model.ES_YDENPYO[0].BIKO)
+                    </th>
+                    <th style="width:8.4%;">
+                        @Html.DisplayNameFor(model=> model.ES_YDENPYO[0].KINGAKU)
+                    </th>
+                    <th>行選択</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    if (Model.ES_YDENPYO != null)
+                    {
+                        @foreach (var item in Model.ES_YDENPYO)
+                        {
+                            <tr data-item-id="@item.DENPYONO">
+                                <td>
+                                    @i
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DENPYONO)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BUMONCD_YKANR)
+                                </td>
+                                <td>
+                                    @item.DENPYODT.ToString("yyyy-MM-dd")
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UKETUKEDT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SUITOKB)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BIKO)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.KINGAKU)
+                                </td>
+                                <td>
+                                    <input type='checkbox'>
+                                </td>
+                            </tr>
+                            i++;
+
+                            sum += item.KINGAKU;
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <table class="table table-borderless">
+        <tr>
+            <th style="width:1%;"></th>
+            <th style="width:8.25%;"></th>
+            <th style="width:10.42%;"></th>
+            <th style="width:10.42%;"></th>
+            <th style="width:10.42%;"></th>
+            <th style="width:10.42%;"></th>
+            <th style="width:30.5%; text-align: right;">交通費計</th>
+            <th style="width:8.4%; background-color:#ced4da; border: 2px solid black;" id = "sum_all_out" >@sum</th>
+            <th></th>
+        </tr>
+    </table>
+
+</body>

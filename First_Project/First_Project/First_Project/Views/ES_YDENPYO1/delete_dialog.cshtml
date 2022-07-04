@@ -1,0 +1,144 @@
+﻿@using graduate_project.Models
+@model ES_YDENPYO1ViewModel
+@{
+    ViewData["Title"] = "Delete Success";
+}
+
+<style>
+
+    button {
+        background-color: #6c757d;
+        
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 30%;
+        opacity: 0.9;
+    }
+
+        button:hover {
+            opacity: 1;
+        }
+
+    /* Float cancel and delete buttons and add an equal width */
+    .cancelbtn, .deletebtn {
+        float: left;
+        width: 50%;
+    }
+
+    /* Add a color to the cancel button */
+    .cancelbtn {
+        background-color: #ccc;
+        color: black;
+    }
+
+    /* Add a color to the delete button */
+    .deletebtn {
+        background-color: #f44336;
+    }
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 0; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 30%; /* Full width */
+        height: 15%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        /* border: 1px solid #888;*/
+        max-width: 30%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /* Add Animation */
+    @@-webkit-keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
+
+    @@keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+
+<!-- The Modal -->
+<div id="myModal_delete" class="modal" style="zoom: 0.8;">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+
+        <div class="">
+            <h2 class="text-center" >Bạn muốn xóa dữ liệu</h2>
+        </div>
+        <div class="modal-body">
+            <p class="text-center">伝票番号: @Model.ES_YDENPYO1.DENPYONO.ToString()</p>
+        </div>
+
+        <form asp-action="Delete" id="delete_form">
+            <input  name="id" value="@Model.ES_YDENPYO1.DENPYONO" hidden />
+            <div style="display:flex; justify-content:center">
+                <button type="button" id="btn-dialog-delete" style="margin: 0 35px; border: 3px solid black;">OK</button>
+                <button type="button" id="btn-dialog-cancel" style="margin: 0 35px; border: 3px solid black;">Cancel</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,109 @@
+﻿@model graduate_project.Models.ES_YDENPYO1
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ES_YDENPYO</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DENPYONO" />
+            <div class="form-group">
+                <label asp-for="KAIKEIND" class="control-label"></label>
+                <input asp-for="KAIKEIND" class="form-control" />
+                <span asp-validation-for="KAIKEIND" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UKETUKEDT" class="control-label"></label>
+                <input asp-for="UKETUKEDT" class="form-control" />
+                <span asp-validation-for="UKETUKEDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DENPYODT" class="control-label"></label>
+                <input asp-for="DENPYODT" class="form-control" />
+                <span asp-validation-for="DENPYODT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BUMONCD_YKANR" class="control-label"></label>
+                <input asp-for="BUMONCD_YKANR" class="form-control" />
+                <span asp-validation-for="BUMONCD_YKANR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BIKO" class="control-label"></label>
+                <input asp-for="BIKO" class="form-control" />
+                <span asp-validation-for="BIKO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SUITOKB" class="control-label"></label>
+                <input asp-for="SUITOKB" class="form-control" />
+                <span asp-validation-for="SUITOKB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SHIHARAIDT" class="control-label"></label>
+                <input asp-for="SHIHARAIDT" class="form-control" />
+                <span asp-validation-for="SHIHARAIDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KINGAKU" class="control-label"></label>
+                <input asp-for="KINGAKU" class="form-control" />
+                <span asp-validation-for="KINGAKU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="INSERT_OPE_ID" class="control-label"></label>
+                <input asp-for="INSERT_OPE_ID" class="form-control" />
+                <span asp-validation-for="INSERT_OPE_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="INSERT_PGM_ID" class="control-label"></label>
+                <input asp-for="INSERT_PGM_ID" class="form-control" />
+                <span asp-validation-for="INSERT_PGM_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="INSERT_PGM_PRM" class="control-label"></label>
+                <input asp-for="INSERT_PGM_PRM" class="form-control" />
+                <span asp-validation-for="INSERT_PGM_PRM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="INSERT_DATE" class="control-label"></label>
+                <input asp-for="INSERT_DATE" class="form-control" />
+                <span asp-validation-for="INSERT_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UPDATE_OPE_ID" class="control-label"></label>
+                <input asp-for="UPDATE_OPE_ID" class="form-control" />
+                <span asp-validation-for="UPDATE_OPE_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UPDATE_PGM_ID" class="control-label"></label>
+                <input asp-for="UPDATE_PGM_ID" class="form-control" />
+                <span asp-validation-for="UPDATE_PGM_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UPDATE_PGM_PRM" class="control-label"></label>
+                <input asp-for="UPDATE_PGM_PRM" class="form-control" />
+                <span asp-validation-for="UPDATE_PGM_PRM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UPDATE_DATE" class="control-label"></label>
+                <input asp-for="UPDATE_DATE" class="form-control" />
+                <span asp-validation-for="UPDATE_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

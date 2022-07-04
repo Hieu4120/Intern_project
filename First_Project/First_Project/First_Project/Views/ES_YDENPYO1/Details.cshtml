@@ -1,0 +1,114 @@
+﻿@model graduate_project.Models.ES_YDENPYO1
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ES_YDENPYO</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KAIKEIND)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KAIKEIND)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UKETUKEDT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UKETUKEDT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DENPYODT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DENPYODT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BUMONCD_YKANR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BUMONCD_YKANR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BIKO)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BIKO)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SUITOKB)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SUITOKB)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SHIHARAIDT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SHIHARAIDT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KINGAKU)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KINGAKU)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.INSERT_OPE_ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.INSERT_OPE_ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.INSERT_PGM_ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.INSERT_PGM_ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.INSERT_PGM_PRM)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.INSERT_PGM_PRM)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.INSERT_DATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.INSERT_DATE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UPDATE_OPE_ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UPDATE_OPE_ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UPDATE_PGM_ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UPDATE_PGM_ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UPDATE_PGM_PRM)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UPDATE_PGM_PRM)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UPDATE_DATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UPDATE_DATE)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.DENPYONO">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

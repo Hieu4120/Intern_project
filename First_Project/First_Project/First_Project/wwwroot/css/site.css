@@ -1,0 +1,53 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    margin-right:-20px; 
+    background: url(/icon/Capture.PNG) no-repeat center;
+    width: 20%;
+    height: 150%;
+    border-width: thin;
+}
+
+
+
+.hide-date input[type="date"]:enabled::-webkit-datetime-edit-text {
+    display: none;
+}
+
+
+
+.hide-date input[type="date"]:enabled::-webkit-datetime-edit-month-field {
+    display: none;
+}
+
+
+
+.hide-date input[type="date"]:enabled::-webkit-datetime-edit-day-field {
+    display: none;
+}
+
+
+
+.hide-date input[type="date"]:enabled::-webkit-datetime-edit-year-field {
+    display: none;
+}

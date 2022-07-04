@@ -1,0 +1,113 @@
+﻿@model IEnumerable<First_Project.Models.ES_YDENPYOD>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DENPYONO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDODT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SHUPPATSUPLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MOKUTEKIPLC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KEIRO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KINGAKU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.INSERT_OPE_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.INSERT_PGM_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.INSERT_PGM_PRM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.INSERT_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UPDATE_OPE_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UPDATE_PGM_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UPDATE_PGM_PRM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UPDATE_DATE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DENPYONO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDODT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SHUPPATSUPLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOKUTEKIPLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KEIRO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KINGAKU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INSERT_OPE_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INSERT_PGM_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INSERT_PGM_PRM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INSERT_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UPDATE_OPE_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UPDATE_PGM_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UPDATE_PGM_PRM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UPDATE_DATE)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GYONO">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GYONO">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GYONO">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

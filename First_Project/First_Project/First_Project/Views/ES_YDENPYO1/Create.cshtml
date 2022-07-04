@@ -1,0 +1,264 @@
+﻿@using graduate_project.Models
+@model ES_YDENPYO1ViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    int i = 1;
+    double sum = 0;
+    await Html.RenderPartialAsync("success_dialog");
+    await Html.RenderPartialAsync("success_dialog_edit");
+    await Html.RenderPartialAsync("delete_dialog");
+    await Html.RenderPartialAsync("success_dialog_delete_msg");
+    await Html.RenderPartialAsync("department_popup", Model);
+
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<h4 style="margin-bottom:100px" class="text-center">予定伝票入力</h4>
+
+<form id="form_create" asp-action="Create">
+    <input id="id_es1" name="id" value=@Model.ES_YDENPYO1.DENPYONO type="text" hidden="" class="form-control">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group row" style="margin-bottom: 50px;">
+        <label for="input_year" class="col-sm-1 col-form-label">伝票番号</label>
+        @{
+            if (@Model.ES_YDENPYO1.BUMONCD_YKANR == null)
+            {
+                <div class="col-sm-2">
+                    <input type="text" style="background-color: #ced4da" id="denpyono" class="form-control border-dark" readonly>
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-2">
+                    <input value=@Model.ES_YDENPYO1.DENPYONO type="text" style="background-color: #ced4da" id="denpyono" class="form-control border-dark" readonly>
+                </div>
+            }
+        }
+        <div class=" col-sm-6 d-flex justify-content-end">
+
+            @{
+                string CurrentURL = @Url.RouteUrl(ViewContext.RouteData.Values);
+                if (CurrentURL == "/ES_YDENPYO1/Create")
+                {
+                    <input id="btn-success" class="btn btn-secondary col-1" type="submit" value="登録" style="margin:0px 5px; border: 2px solid black; " />
+                    <input disabled="" class="btn btn-secondary col-1" value="削除" style="margin:0px 5px; border: 2px solid black; " />
+                }
+                else
+                {
+                    <input id="btn-success_edit" class="btn btn-secondary col-1" type="button" value="登録" style="margin:0px 5px; border: 2px solid black; " />
+                    <input id="btn-delete" class="btn btn-secondary col-1" type="button" value="削除" style="margin:0px 5px; border: 2px solid black; " />
+                }
+            }
+            <input asp-action="Index" class="btn btn-secondary col-1" type="submit" id="back_index" value="終了" style="margin:0px 5px; border: 2px solid black;" />
+        </div>
+    </div>
+
+    <div class=" form-group row" style="margin-bottom: 0px;">
+        <label for="input_year" class="col-sm-1 col-form-label">伝票日付</label>
+        @{
+            if (@Model.ES_YDENPYO1.BUMONCD_YKANR == null)
+            {
+                <div class="col-sm-2 ">
+                    <input style="background-color: #ced4da" class="form-control border-dark" readonly>
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-2 ">
+                    <input asp-for="ES_YDENPYO1.DENPYODT" style="background-color: #ced4da" class="form-control border-dark" readonly>
+                </div>
+            }
+        }
+        <div class=" col-sm-6 d-flex justify-content-end">
+            <label for="input_year" class="col-sm-3 col-form-label" style="margin-right:-120px">出納方法</label>
+            <div class="col-sm-3 border-dark">
+                <p>
+                    <select class=" rounded border-dark" id="cash_method" style="width: 100%; height: calc(1.5em + .75rem + 2px);  margin-right:50px;" asp-for="ES_YDENPYO1.SUITOKB" asp-items="Model.SUITOKB_cash">
+                        <option value=@null></option>
+                    </select>
+                </p>
+            </div>
+            <span id="required_vali_method" class="text-danger" style="margin-top: 7px; "></span>
+            <label for="input_year" class="col-sm-2 col-form-label" style="margin:0 -15px 0 33px;">支払予定日</label>
+
+            @{
+                if (@Model.ES_YDENPYO1.BIKO == null)
+                {
+                    <div class="col-sm-4 hide-date" style="margin:0px -10px" id="esti_id" onload="remove()">
+                        <input asp-for="ES_YDENPYO1.SHIHARAIDT" class="form-control border-dark" style="width:100%; calc(1.5em + .75rem + 2px)" type="date" id="esti_date" onchange="remove_esti_id()">
+                    </div>
+                }
+                else
+                {
+                    <div class="col-sm-4" style="margin:0px -10px" id="esti_id">
+                        <input asp-for="ES_YDENPYO1.SHIHARAIDT" class="form-control border-dark" style="width:100%; calc(1.5em + .75rem + 2px)" type="date" id="esti_date">
+                    </div>
+                }
+            }
+        </div>
+        <script>
+             function remove(){
+             if($("#esti_date").val() != null){
+            $("#esti_date").removeClass("hide-date");
+                }
+            
+             }
+        </script>
+        <span id="required_vali_esti" class="text-danger col-sm-2" style="margin-top:10px ; "></span>
+    </div>
+
+    <div class="form-group row " style="margin-bottom: 0px;">
+        <label for="input_year" class="col-sm-1 col-form-label">年度</label>
+        <div class="col-sm-2  ">
+            <p>
+                <select class="rounded border-dark" style="width: 100%; height: calc(1.5em + .75rem + 2px);" asp-for="ES_YDENPYO1.KAIKEIND" asp-items="Model.SUITOKB_year">
+                    <option value="2022">2022</option>
+                </select>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="form-group row ">
+        <label for="input_year" class="col-sm-1 col-form-label">申請日</label>
+        @{
+            if (@Model.ES_YDENPYO1.BIKO == null)
+            {
+                <div class="col-sm-2 hide-date" id="app_date_id">
+                    <input asp-for="ES_YDENPYO1.UKETUKEDT" class="form-control border-dark" style="width:100%; height:100%;" type="date" id="app_date" onchange="remove_app_date_id()">
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-2" id="app_date_id">
+                    <input asp-for="ES_YDENPYO1.UKETUKEDT" class="form-control border-dark" style="width:100%; height:100%;" type="date" id="app_date">
+                </div>
+            }
+        }
+        <span asp-validation-for="ES_YDENPYO1.UKETUKEDT" id="required_vali_app" class="text-danger col-sm-2" style="margin-top: 7px;"></span>
+    </div>
+
+
+
+    <div class="col-sm-12 d-flex " style="margin-bottom: 16px; padding-left:0px;">
+        <label for="input_year" class="col-sm-1 col-form-label" style="padding-left:0px;">伝票日付</label>
+        <div class="col-sm-1" style="padding: 0px;">
+            <input asp-for="ES_YDENPYO1.BUMONCD_YKANR" class="form-control border-dark" type="text" id="ticket_depart_code" style=" margin-left: 3px">
+        </div>
+        <span asp-validation-for="ES_YDENPYO1.BUMONCD_YKANR" id="required_vali_depart" class="text-danger" style="margin: 7px 0px 0px 10px; display:block;"></span>
+        <div class="col-sm-2" style="padding: 0 5px;">
+            <input asp-for="Bumon_name" class="form-control border-dark" type="text" style="background-color: #ced4da;" readonly id="ticket_depart_name">
+        </div>
+        <div class="col-sm-1" style="padding:0px">
+            <input id="open_popup_depart" class="btn btn-secondary border-dark" type="button" value="ガ" style="margin:0px;" />
+        </div>
+    </div>
+
+
+    <div class="form-group row ">
+        <label for="input_year" class="col-sm-1 col-form-label">出張目的</label>
+
+        <div class="col-sm-2">
+            <input asp-for="ES_YDENPYO1.BIKO" class="form-control border-dark" style="width:100%; height:100%" type="text" id="purpose_trip">
+        </div>
+        <span asp-validation-for="ES_YDENPYO1.BIKO" id="required_vali_purpose" class="text-danger col-sm-2" style="margin-top: 7px;"></span>
+        <div>
+            <label for="input_year" class="col-sm-12 col-form-label">（備考）</label>
+            @{
+                string CurrentURL1 = @Url.RouteUrl(ViewContext.RouteData.Values);
+                if (CurrentURL1 == "/ES_YDENPYO1/Create")
+                {
+                    <input class="btn btn-secondary col-sm-12" id="btn_create" role="button" style="width:8%; height:55%; float:right; border: 2px solid black;" value="明細追加">
+                }
+                else
+                {
+                    <a class="btn btn-secondary col-sm-12" id="btn_create" role="button" style="width:8%; height:55%; float:right; border: 2px solid black; ">明細追加</a>
+                }
+            }
+        </div>
+    </div>
+
+    <input id="cre_new_id" hidden="" value="@Model.Max_id" type="text" style="background-color: #ced4da" class="form-control">
+</form>
+<div onload="loadTable()" class="table-responsive-sm text-center" style="max-height: 300px; overflow: auto; margin-top: 45px;">
+    <table class="table table-secondary" style="  border:2px solid black; border-style: solid solid none solid; margin-bottom:0px;">
+        <tr>
+            <th>交通費</th>
+        </tr>
+    </table>
+    <table id="table_5" style=" border:2px solid black;" class="table table-bordered">
+
+        <thead class="sticky-lg-top">
+            <tr class="table-secondary">
+                <th style="width:1%;">行</th>
+                <th style="width:10.42%;">
+                    @Html.DisplayNameFor(model=> model.ES_YDENPYO[0].UKETUKEDT)
+                </th>
+                <th style="width:10.42%;">
+                    @Html.DisplayNameFor(model=> model.ES_YDENPYOD[0].SHUPPATSUPLC)
+                </th>
+                <th style="width:10.42%;">
+                    @Html.DisplayNameFor(model=> model.ES_YDENPYOD[0].MOKUTEKIPLC)
+                </th>
+                <th style="width:30.5%;">
+                    @Html.DisplayNameFor(model=> model.ES_YDENPYOD[0].KEIRO)
+                </th>
+                <th style="width:8.4%;">
+                    @Html.DisplayNameFor(model=> model.ES_YDENPYOD[0].KINGAKU)
+                </th>
+            </tr>
+        </thead>
+        <tbody id="es_ydenpyod5">
+            @{
+
+                if (Model.ES_YDENPYOD != null)
+                {
+                    @foreach (var item in Model.ES_YDENPYOD)
+                    {
+                        <tr data-parent-id="@item.DENPYONO" id="@item.GYONO">
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IDODT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SHUPPATSUPLC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MOKUTEKIPLC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.KEIRO)
+                            </td>
+                            <td id="sum_all">
+                                @Html.DisplayFor(modelItem => item.KINGAKU)
+                            </td>
+                        </tr>
+                        i++;
+                        sum += item.KINGAKU;
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<table class="table table-borderless">
+    <tr>
+        <th style="width:1%;"></th>
+        <th style="width:10.42%;"></th>
+        <th style="width:10.42%;"></th>
+        <th style="width:10.42%;"></th>
+        <th style="width:30.5%; text-align: right;">交通費計</th>
+        <th style="width:8.4%; background-color:#ced4da; border: 2px solid black;" id="sum_all_money">@sum</th>
+    </tr>
+</table>
+
+@section Scripts {
+    @{
+
+    //await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

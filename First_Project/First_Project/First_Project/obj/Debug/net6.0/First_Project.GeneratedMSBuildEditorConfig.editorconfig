@@ -1,0 +1,128 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = First_Project
+build_property.RootNamespace = First_Project
+build_property.ProjectDir = C:\Users\nguyentronghieu\source\repos\First_Project\First_Project\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\nguyentronghieu\source\repos\First_Project\First_Project
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/BUMONs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlVNT05zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/BUMONs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlVNT05zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/BUMONs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlVNT05zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/BUMONs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlVNT05zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/BUMONs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlVNT05zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/delete_dialog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcZGVsZXRlX2RpYWxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/department_popup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcZGVwYXJ0bWVudF9wb3B1cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/success_dialog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcc3VjY2Vzc19kaWFsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/success_dialog_delete_msg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcc3VjY2Vzc19kaWFsb2dfZGVsZXRlX21zZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYO1/success_dialog_edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZTzFcc3VjY2Vzc19kaWFsb2dfZWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYOD/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZT0RcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYOD/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZT0RcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYOD/delete_cookie_dialog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZT0RcZGVsZXRlX2Nvb2tpZV9kaWFsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYOD/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZT0RcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYOD/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZT0RcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/ES_YDENPYOD/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVNfWURFTlBZT0RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyentronghieu/source/repos/First_Project/First_Project/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-typgsov7cf
